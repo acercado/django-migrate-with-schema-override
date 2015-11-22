@@ -57,6 +57,14 @@ class OverrideCursorWrapper(object):
             return self.cursor.executemany(sql, param_list)
 
 
+    def __getattr__(self, attr):
+        return getattr(self.cursor, attr)
+
+
+    def __iter__(self):
+        return iter(self.cursor)
+
+
 class CursorWrapper(util.CursorWrapper):
     def __init__(self, cursor, db):
         self.cursor = OverrideCursorWrapper(cursor, db)

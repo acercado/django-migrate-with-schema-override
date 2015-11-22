@@ -6,7 +6,7 @@ packages = [
 
 setup(
     name='django-migrate-with-schema-override',
-    version=0.3,
+    version=0.4,
     packages=packages,
     include_package_data=True,
     license='MIT',
